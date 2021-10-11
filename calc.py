@@ -1,4 +1,4 @@
-#Create ways to calculate (btw im german, so my english may not be so good)
+#gCreate ways to calculate (btw im german, so my english may not be so good)
 
 # __________
 #| ________ |

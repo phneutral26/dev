@@ -62,6 +62,9 @@ def login():
         print(".")
         t.sleep(0.5)
         newUser()
+    
+def test():
+    print("TEST!!")
 
 def philLoggedIn():
     print("Phil is logged in")

@@ -65,6 +65,7 @@ def login():
     
 def test():
     print("TEST!!")
+    print("TESTTESTTEST")
 
 def philLoggedIn():
     print("Phil is logged in")

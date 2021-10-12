@@ -63,11 +63,6 @@ def login():
         t.sleep(0.5)
         newUser()
     
-def test():
-    print("TEST!!")
-    print("TESTTESTTEST")
-
-
 def calc():
     number1 = int(input("First Number: "))
     number2 = int(input("Second Number: "))

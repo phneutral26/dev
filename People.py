@@ -67,24 +67,6 @@ def test():
     print("TEST!!")
     print("TESTTESTTEST")
 
-def philLoggedIn():
-    print("Phil is logged in")
-def maxLoggedIn():
-    print("Max is logged in")
-def daniLoggedin():
-    print("Dani is logged in")
-def nicoLoggedIn():
-    print("Nico is logged in")
-
-def userManager():
-    if loggedInUser == "Phil":
-        philLoggedIn()
-    elif loggedInUser == "Max":
-        maxLoggedIn()
-    elif loggedInUser == "Dani":
-        daniLoggedin()
-    elif loggedInUser == "Nico":
-        nicoLoggedIn()
 
 def calc():
     number1 = int(input("First Number: "))

@@ -1,4 +1,4 @@
-#gCreate ways to calculate (btw im german, so my english may not be so good)
+#Create ways to calculate (btw im german, so my english may not be so good)
 
 # __________
 #| ________ |
@@ -21,10 +21,6 @@ def division(x, y):
 def multiplication(x, y):
     return x * y
 
-#testing
-#print(multiplication(12, 5))
-#thinkinng.... how to go on?
-#q&a part
 print("1. Add")
 print("2. Subtract")
 print("3. Multiply")

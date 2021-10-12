@@ -1,7 +1,7 @@
 import time as t
 import random
-userNames = ["muh", "Phil", "Max", "Dani", "Nico"]
-passwords = ["muh", "0612", "Wikinger09", "1212", "difficult"]
+userNames = ["muh", "User1", "User2", "User3", "User4"]
+passwords = ["muh", "Pswd1", "Pswd2", "Pswd3", "pswd4"]
 loggedInUser = "test"
 trueLogin = False
 def newUser():
@@ -18,37 +18,37 @@ def login():
     loginName = input("Gebe deinen Benutzername ein.: ")
     if loginName == "new":
         newUser()
-    elif loginName == "Phil":
+    elif loginName == "User1":
         loginPassword = input("Gib Dein Passwort ein: ")
         if loginPassword == passwords[1]:
             print("Succesful Login!")
             global loggedInUser
-            loggedInUser = "Phil"
+            loggedInUser = "User1"
             trueLogin = True
         else:
             print("Bad...")
             
-    elif loginName == "Max":
+    elif loginName == "User2":
         loginPassword = input("Gib dein Passwort ein: ")
         if loginPassword == passwords[2]:
             print("Succesful Login!")
-            loggedInUser = "Max"
+            loggedInUser = "User2"
             trueLogin = True
         else:
             print("Bad...")
-    elif loginName == "Dani":
+    elif loginName == "User3":
         loginPassword = input("Gib dein Passwort ein: ")
         if loginPassword == passwords[3]:
             print("Succesful Login!")
-            loggedInUser = "Dani"
+            loggedInUser = "User3"
             trueLogin = True
         else:
             print("Bad...")
-    elif loginName == "Nico":
+    elif loginName == "User4":
         loginPassword = input("Gib dein Passwort ein: ")
         if loginPassword == passwords[4]:
             print("Succesful Login!")
-            loggedInUser = "Nico"
+            loggedInUser = "User4"
             trueLogin = True
         else:
             print("Bad...")

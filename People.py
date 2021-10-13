@@ -1,5 +1,16 @@
 import time as t
 import random
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 userNames = ["muh", "User1", "User2", "User3", "User4"]
 passwords = ["muh", "Pswd1", "Pswd2", "Pswd3", "pswd4"]
 loggedInUser = "test"
@@ -66,7 +77,8 @@ def login():
 def calc():
     number1 = int(input("First Number: "))
     number2 = int(input("Second Number: "))
-    sum = number1 + number2
+    sum = number1
+    number1 + number2
     sub = number1 - number2
     dif = number1 / number2
     mul = number1 * number2

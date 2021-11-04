@@ -23,7 +23,7 @@ def multiplication(x, y):
 
 print("1. W:Add")
 print("2. Subtract")
-print("3. Multiply")
+print("3. Mueltiply")
 print("4. Divide")  
 print("Choose operation: ")
 

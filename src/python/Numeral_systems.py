@@ -1,5 +1,5 @@
 rest = []
-
+print("Test")
 
 def dezinbin():
     dezNum = int(input("Give a decimal integer to the computer: "))

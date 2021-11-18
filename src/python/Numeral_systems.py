@@ -13,7 +13,8 @@ def dezinbin():
         print("Invalid Input, try again")
         dezinbin()
 
-
+def init(num1, num2):
+    print("hexzahl")
 # dezinbin()
 
 def dezinhexcom():

@@ -1,5 +1,9 @@
 import hashlib
-# Du Huahn
+import os
+import sys
+save_path = '/home/hackerman/dev/src/files'
+file_name = 'users.txt'
+completeName = os.path.join(save_path, file_name)
 class User(): #User model
     def __init__(self, username, hash_password):
         self.username = username
@@ -14,7 +18,7 @@ def register(users): #registration function
 
     users += [User(username, password)]
 
-    with open("users.txt", "w") as file:
+    with open(completeName, "w") as file:
         file.seek(0), file.truncate()
         for user in users:
             file.write("{}, {}\n".format(user.username, user.password))

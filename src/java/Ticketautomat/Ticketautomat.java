@@ -2,8 +2,8 @@
 /**
  * Write a description of class Ticketautomat here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Phil)
+ * @version (12/2021)
  */
 public class Ticketautomat
 {

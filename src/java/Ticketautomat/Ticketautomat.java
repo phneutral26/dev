@@ -38,7 +38,7 @@ public class Ticketautomat
     /** es wird geld in den automaten geworfen" */
     public void geldEinwerfen(int pBetrag)
     {
-        if (pBetrag<money){    
+        if (pBetrag=<money){    
             money -= pBetrag;
             bisherGezahlt += pBetrag;
             rest_betrag-=pBetrag;

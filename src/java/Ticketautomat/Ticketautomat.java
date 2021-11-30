@@ -74,5 +74,9 @@ public class Ticketautomat
     {
         money += pAufladen;
     }
+    public void main(int pMoney) {
+       geldEinwerfen(pMoney);
+       ticketDrucken();
+    }
      
 }

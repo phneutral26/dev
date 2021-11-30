@@ -16,9 +16,9 @@ public class Ticketautomat
     /**
      * Konstruktor vom Ticketautomaten 
     */
-    public Ticketautomat(int pstart_money)
+    public Ticketautomat(int pstart_money, int pTicket_money)
     {
-        preis = 500;
+        preis = pTicket_money;
         bisherGezahlt = 0;
         money = pstart_money;
         rest_betrag = 500;

@@ -18,8 +18,7 @@ public class Ticketautomat
     */
     public Ticketautomat(int pstart_money, int pTicket_money)
     {
-        preis = pTicket_money;
-        bisherGezahlt = 0;
+        preis = 500;
         money = pstart_money;
         rest_betrag = 500;
     }

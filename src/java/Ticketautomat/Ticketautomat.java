@@ -55,7 +55,7 @@ public class Ticketautomat
     /** Druckt ein Drucktext */
     public void ticketDrucken()
     {    
-        if(bisherGezahlt>=500){ // yuo need to pay exactly 500 cents
+        if(bisherGezahlt>=500){ // you need to pay exactly 500 cents
             System.out.println("##################");
             System.out.println("#Ticket#");
             System.out.println(preis);

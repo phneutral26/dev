@@ -28,6 +28,7 @@ public class Ticketautomat
     public int gibprice()
     {
         return price;
+        System.out.println("Is the ticket!");
     }
     /** Liefert den bisher eingezahlten Betrag */
     public int givePayedByNow()

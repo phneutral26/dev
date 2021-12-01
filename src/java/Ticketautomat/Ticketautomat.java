@@ -12,6 +12,7 @@ public class Ticketautomat
     private int still_left; // how much do i still need to pay?
     private int money; // how much money do i still have
     private int changeMoney; // how much exchange money do i get?
+    private int allEarnings; // how much money has been put into the machine?
 
     /**
      * Konstruktor vom Ticketautomaten 
@@ -41,10 +42,11 @@ public class Ticketautomat
          
         if (pAmount<=money){ // Stops you from paying more than you have    
             money -= pAmount; // adjust your balance to be reduced by payed money
+            allEarnings += pAmount; // update the variable to count every earning
             payedByNow += pAmount; // update the variable to count how many you have paid
-            still_left-=pAmount; // reduce the variable, how much you still have to pay by payed money
+            still_left -= pAmount; // reduce the variable, how much you still have to pay by payed money
             if(payedByNow > price){ // Exchange Money
-                changeMoney = payedByNow - price;
+                changeMoney = pAmount - price;
                 money += changeMoney;
                 System.out.println(changeMoney + " Back");
             }
@@ -61,6 +63,8 @@ public class Ticketautomat
             System.out.println("#Ticket#");
             System.out.println(price);
             System.out.println("##################");
+            payedByNow = 0;
+            still_left = 500;
         }
         else{
             System.out.println("You didnt pay enough! You still have to pay: ");
@@ -75,5 +79,20 @@ public class Ticketautomat
     {
         money += pAdd; //self-explanatory, create money from nothing an stuff it in your own pockets
     }
-     
+    public int returnAllEarnings(){
+        return allEarnings;
+    }
+    public void clear() {
+        payedByNow = 0;
+        allEarnings = 0;
+        still_left = 500;
+        money = 500;
+    }
+    public void setPrice(int pPrice) {
+        price = pPrice;
+        still_left = 500;
+        payedByNow = 0;
+    }
+    
+
 }

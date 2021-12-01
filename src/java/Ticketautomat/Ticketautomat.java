@@ -45,7 +45,7 @@ public class Ticketautomat
             payedByNow += pAmount; // update the variable to count how many you have paid
             still_left -= pAmount; // reduce the variable, how much you still have to pay by payed money
             if(payedByNow > price){ // Exchange Money
-                changeMoney = payedByNow - price;
+                changeMoney = pAmount - price;
                 money += changeMoney;
                 System.out.println(changeMoney + " Back");
             }
@@ -92,5 +92,6 @@ public class Ticketautomat
         still_left = 500;
         payedByNow = 0;
     }
+    
 
 }

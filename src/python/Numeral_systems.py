@@ -1,5 +1,4 @@
 rest = []
-print("Test")
 def dezinbin():
     dezNum = int(input("Give a decimal integer to the computer: "))
     checkInt = isinstance(dezNum, int)
@@ -13,9 +12,6 @@ def dezinbin():
         print("Invalid Input, try again")
         dezinbin()
 
-def init(num1, num2):
-    print("hexzahl")
-# dezinbin()
 
 def dezinhexcom():
     dezNum = int(input("Give a decimal integer to the computer:  "))

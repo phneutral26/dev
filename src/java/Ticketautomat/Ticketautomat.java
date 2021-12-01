@@ -7,45 +7,45 @@
  */
 public class Ticketautomat
 {
-    private int preis; // how much is the ticket?
-    private int bisherGezahlt; // how much have i payed by now?
-    private int rest_betrag; // how much do i still need to pay?
+    private int price; // how much is the ticket?
+    private int payedByNow; // how much have i payed by now?
+    private int still_left; // how much do i still need to pay?
     private int money; // how much money do i still have
-    private int Zurueck; // how much exchange money do i get?
+    private int changeMoney; // how much exchange money do i get?
 
     /**
      * Konstruktor vom Ticketautomaten 
     */
-    public Ticketautomat(int pstart_money, int pTicket_money)
+    public Ticketautomat(int pstart_money)
     {
-        preis = 500;
+        price = 500;
         money = pstart_money;
-        rest_betrag = 500;
+        still_left = 500;
     }
     /**
-     * Liefert den Preis eines Tickets dieses Automatens (in cent)
+     * Liefert den price eines Tickets dieses Automatens (in cent)
      */
-    public int gibPreis()
+    public int gibprice()
     {
-        return preis;
+        return price;
     }
     /** Liefert den bisher eingezahlten Betrag */
-    public int gibbisherGezahltenBetrag()
+    public int givePayedByNow()
     {
-        return bisherGezahlt;
+        return payedByNow;
     }
     /** es wird geld in den automaten geworfen" */
-    public void geldEinwerfen(int pBetrag)
+    public void pay(int pAmount)
     {
          
-        if (pBetrag<=money){ // Stops you from paying more than you have    
-            money -= pBetrag; // adjust your balance to be reduced by payed money
-            bisherGezahlt += pBetrag; // update the variable to count how many you have paid
-            rest_betrag-=pBetrag; // reduce the variable, how much you still have to pay by payed money
-            if(bisherGezahlt > preis){ // Exchange Money
-                Zurueck = bisherGezahlt - preis;
-                money += Zurueck;
-                System.out.println(Zurueck + " Zurück");
+        if (pAmount<=money){ // Stops you from paying more than you have    
+            money -= pAmount; // adjust your balance to be reduced by payed money
+            payedByNow += pAmount; // update the variable to count how many you have paid
+            still_left-=pAmount; // reduce the variable, how much you still have to pay by payed money
+            if(payedByNow > price){ // Exchange Money
+                changeMoney = payedByNow - price;
+                money += changeMoney;
+                System.out.println(changeMoney + " Back");
             }
         }
         else{
@@ -53,30 +53,26 @@ public class Ticketautomat
         }
     }
     /** Druckt ein Drucktext */
-    public void ticketDrucken()
+    public void printTicket()
     {    
-        if(bisherGezahlt>=500){ // you need to pay exactly 500 cents
+        if(payedByNow>=500){ // you need to pay exactly 500 cents
             System.out.println("##################");
             System.out.println("#Ticket#");
-            System.out.println(preis);
+            System.out.println(price);
             System.out.println("##################");
         }
         else{
             System.out.println("You didnt pay enough! You still have to pay: ");
-            System.out.println(rest_betrag); // look line 45
+            System.out.println(still_left); // look line 45
         }
         }
-    public int restBetrag(){
-        rest_betrag = preis - bisherGezahlt; // UNNEEDED
-        return rest_betrag;
+    public int stillLeft(){
+        still_left = price - payedByNow; // UNNEEDED
+        return still_left;
     }
-    public void geldAufladen(int pAufladen)
+    public void addMoney(int pAdd)
     {
-        money += pAufladen; //self-explanatory, create money from nothing an stuff it in your own pockets
-    }
-    public void main(int pMoney) {
-       geldEinwerfen(pMoney);
-       ticketDrucken();
+        money += pAdd; //self-explanatory, create money from nothing an stuff it in your own pockets
     }
      
 }

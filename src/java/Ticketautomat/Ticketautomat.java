@@ -50,12 +50,12 @@ public class Ticketautomat
                 money += changeMoney;
                 System.out.println(changeMoney + " Back");
                 }
-
-            }
-        }
-        else{
+             else{
             System.out.println("You dont have enough money to do this. Sorry.");
         }
+            }
+        }
+       
 public int muenze(int pWert){
     if (payedByNow % pWert >= 1){
         int hAmount = (payedByNow - (payedByNow % pWert)) / pWert;
@@ -67,16 +67,16 @@ public int muenze(int pWert){
     }
 }
 public void muenze2(){
-    System.out.println(muenze(200) + "x 2 €")
-    System.out.println(muenze(100) + "x 1 €")
-    System.out.println(muenze(50) + "x 0.5 €")
-    System.out.println(muenze(20) + "x 0.5 €")
-    System.out.println(muenze(10) + "x 0.1 €")
-    System.out.println(muenze(5) + "x 0.05 €")
-    System.out.println(muenze(2) + "x 0.02 €")
-    System.out.println(muenze(1) + "x 0.01 €")
+    System.out.println(muenze(200) + "x 2 €");
+    System.out.println(muenze(100) + "x 1 €");
+    System.out.println(muenze(50) + "x 0.5 €");
+    System.out.println(muenze(20) + "x 0.5 €");
+    System.out.println(muenze(10) + "x 0.1 €");
+    System.out.println(muenze(5) + "x 0.05 €");
+    System.out.println(muenze(2) + "x 0.02 €");
+    System.out.println(muenze(1) + "x 0.01 €");
 }
-    }
+    
     /** Druckt ein Drucktext */
     public void printTicket()
     {    

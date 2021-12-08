@@ -7,21 +7,21 @@
  */
 public class Ticketautomat
 {
-    private double price; // how much is the ticket?
-    private double payedByNow; // how much have i payed by now?
-    private double still_left; // how much do i still need to pay?
-    private double money; // how much money do i still have
-    private double changeMoney; // how much exchange money do i get?
-    private double allEarnings; // how much money has been put into the machine?
+    private int price; // how much is the ticket?
+    private int payedByNow; // how much have i payed by now?
+    private int still_left; // how much do i still need to pay?
+    private int money; // how much money do i still have
+    private int changeMoney; // how much exchange money do i get?
+    private int allEarnings; // how much money has been put into the machine?
 
     /**
      * Konstruktor vom Ticketautomaten 
     */
     public Ticketautomat(int pstart_money)
     {
-        price = 5.0;
+        price = 500;
         money = pstart_money;
-        still_left = 5.0;
+        still_left = 500;
     }
     /**
      * Liefert den price eines Tickets dieses Automatens (in cent)
@@ -32,12 +32,12 @@ public class Ticketautomat
         
     }
     /** Liefert den bisher eingezahlten Betrag */
-    public double givePayedByNow()
+    public int givePayedByNow()
     {
         return payedByNow;
     }
     /** es wird geld in den automaten geworfen" */
-    public void pay(double pAmount)
+    public void pay(int pAmount)
     {
          
         if (pAmount<=money){ // Stops you from paying more than you have    
@@ -49,19 +49,6 @@ public class Ticketautomat
                 changeMoney = pAmount - price;
                 money += changeMoney;
                 System.out.println(changeMoney + " Back");
-                if (changeMoney >= 2.0){
-                    double hchangeMoney = changeMoney;
-                    double amount2Euro=changeMoney/2.0;
-                    int test = (int)amount2Euro;
-                    System.out.println("So much times 2.0 Euro Coins:" + test);
-                    if(test*2.0!=changeMoney){
-                        int testSubtract = test*2;
-                        double DtestSubtract = (double) testSubtract;
-                        hchangeMoney -= DtestSubtract ;
-                        double amount1Euro=hchangeMoney/1.0;
-                        int test2 = (int)amount1Euro;
-                        System.out.println("So much times 1.0 euro coins:" + test2);
-                    }
                 }
 
             }
@@ -69,17 +56,37 @@ public class Ticketautomat
         else{
             System.out.println("You dont have enough money to do this. Sorry.");
         }
+public int muenze(int pWert){
+    if (payedByNow % pWert >= 1){
+        int hAmount = (payedByNow - (payedByNow % pWert)) / pWert;
+        payedByNow = payedByNow - (hAmount * pWert);
+        return hAmount;
+    }
+    else{
+        return 0;
+    }
+}
+public void muenze2(){
+    System.out.println(muenze(200) + "x 2 €")
+    System.out.println(muenze(100) + "x 1 €")
+    System.out.println(muenze(50) + "x 0.5 €")
+    System.out.println(muenze(20) + "x 0.5 €")
+    System.out.println(muenze(10) + "x 0.1 €")
+    System.out.println(muenze(5) + "x 0.05 €")
+    System.out.println(muenze(2) + "x 0.02 €")
+    System.out.println(muenze(1) + "x 0.01 €")
+}
     }
     /** Druckt ein Drucktext */
     public void printTicket()
     {    
-        if(payedByNow>=5.0){ // you need to pay exactly 500 cents
+        if(payedByNow>=500){ // you need to pay exactly 500 cents
             System.out.println("##################");
             System.out.println("#Ticket#");
             System.out.println(price);
             System.out.println("##################");
-            payedByNow = 0.0;
-            still_left = 5.0;
+            payedByNow = 0;
+            still_left = 500;
         }
         else{
             System.out.println("You didnt pay enough! You still have to pay: ");
@@ -94,19 +101,19 @@ public class Ticketautomat
     {
         money += pAdd; //self-explanatory, create money from nothing an stuff it in your own pockets
     }
-    public double returnAllEarnings(){
+    public int returnAllEarnings(){
         return allEarnings;
     }
     public void clear() {
         payedByNow = 0;
         allEarnings = 0;
-        still_left = 5.0;
-        money = 5.0;
+        still_left = 500;
+        money = 500;
     }
     public void setPrice(int pPrice) {
         price = pPrice;
-        still_left = 5.0;
-        payedByNow = 0.0;
+        still_left = 500;
+        payedByNow = 0;
     }
     public void meldung() {
         System.out.println("Bitte werfen sie den passenden\n\t Geldbetrag ein!");

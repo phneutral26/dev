@@ -1,121 +1,135 @@
-
-/**
- * Write a description of class Ticketautomat here.
- *
- * @author (Phil)
- * @version (12/2021)
- */
 public class Ticketautomat
 {
-    private int price; // how much is the ticket?
-    private int bisherGezahlt; // how much have i payed by now?
-    private int nochZuZahlen; // how much do i still need to pay?
-    private int Geld; // how much Geld do i still have
-    private int rückGeld; // how much exchange Geld do i get?
-    private int alleEinahmen; // how much Geld has been put into the machine?
-
+    private int preis; // Der Ticketpreis
+    private int bisherGezahlt; // bisher gezahlter Betrag
+    
     /**
-     * Konstruktor vom Ticketautomaten 
-    */
-    public Ticketautomat(int pstart_Geld)
-    {
-        price = 500;
-        Geld = pstart_Geld;
-        nochZuZahlen = 500;
-    }
-    /**
-     * Liefert den price eines Tickets dieses Automatens (in cent)
+     * Konstruktor vom Ticketautomaten
      */
-    public void gibprice()
+    public Ticketautomat(int pTicketpreis)
     {
-        System.out.println("The ticket is: " + price);
-        
+        preis = pTicketpreis;
+        bisherGezahlt = 0;
     }
-    /** Liefert den bisher eingezahlten Betrag */
-    public int givebisherGezahlt()
+    
+    public Ticketautomat() // Aufgabe 2
+    {
+        preis = 500;
+        bisherGezahlt = 0;
+    }
+    
+    /**
+     * Liefert den Preis eines Tickets dieses Automaten (in Cent)
+     */
+    public int gibPreis()
+    {
+        return preis;
+    }
+    
+    /**
+     * Liefert den bisher eingezahlten Beitrag
+     */
+    public int gibBisherGezahltenBetrag()
     {
         return bisherGezahlt;
     }
-    /** es wird geld in den automaten geworfen" */
-    public void pay(int pBetrag)
-    {
-         
-        if (pBetrag<=Geld){ // Stops you from paying more than you have    
-            Geld -= pBetrag; // adjust your balance to be reduced by payed Geld
-            alleEinahmen += pBetrag; // update the variable to count every earning
-            bisherGezahlt += pBetrag; // update the variable to count how many you have paid
-            nochZuZahlen -= pBetrag; // reduce the variable, how much you still have to pay by payed Geld
-            if(bisherGezahlt > price){ // Exchange Geld
-                rückGeld = pBetrag - price;
-                Geld += rückGeld;
-                System.out.println(rückGeld + " Back");
-                }
-             else{
-            System.out.println("You dont have enough Geld to do this. Sorry.");
-        }
-            }
-        }
-       
-public int muenze(int pWert){
-    if (bisherGezahlt % pWert >= 1){
-        int hAnzahl = (bisherGezahlt - (bisherGezahlt % pWert)) / pWert;
-        bisherGezahlt = bisherGezahlt - (hAnzahl * pWert);
-        return hAnzahl;
-    }
-    else{
-        return 0;
-    }
-}
-public void muenze2(){
-    System.out.println(muenze(200) + "x 2 €");
-    System.out.println(muenze(100) + "x 1 €");
-    System.out.println(muenze(50) + "x 0.5 €");
-    System.out.println(muenze(20) + "x 0.5 €");
-    System.out.println(muenze(10) + "x 0.1 €");
-    System.out.println(muenze(5) + "x 0.05 €");
-    System.out.println(muenze(2) + "x 0.02 €");
-    System.out.println(muenze(1) + "x 0.01 €");
-}
     
-    /** Druckt ein Drucktext */
-    public void printTicket()
-    {    
-        if(bisherGezahlt>=500){ // you need to pay exactly 500 cents
-            System.out.println("##################");
-            System.out.println("#Ticket#");
-            System.out.println(price);
-            System.out.println("##################");
-            bisherGezahlt = 0;
-            nochZuZahlen = 500;
-        }
-        else{
-            System.out.println("You didnt pay enough! You still have to pay: ");
-            System.out.println(nochZuZahlen); // look line 45
-        }
-        }
-    public void stillLeft(){
-        nochZuZahlen = price - bisherGezahlt; // UNNEEDED
-        System.out.println("The price of the ticket still is: " + nochZuZahlen);
-    }
-    public void addGeld(int pAdd)
+    /**
+     * Liefert den fehlenden Betrag
+     */
+    public int gibFehlendenBetrag() 
     {
-        Geld += pAdd; //self-explanatory, create Geld from nothing an stuff it in your own pockets
+        return preis - bisherGezahlt;
     }
-    public int returnalleEinahmen(){
-        return alleEinahmen;
+
+    /**
+     * Liefert den Rückgeld-Betrag zurück
+     */
+    public int gibRueckgeld()
+    {
+        return bisherGezahlt - preis;
     }
-    public void clear() {
+
+    /**
+     * Es wird Geld in den automaten geworfen
+     */
+    public void geldEinwerfen(int pBetrag) 
+    {
+        bisherGezahlt += pBetrag;
+    }
+    
+    /**
+     * Kauf wird abgebrochen
+     */
+    public int kaufAbbrechen() {
+        int hRueckgeld = bisherGezahlt;
         bisherGezahlt = 0;
-        alleEinahmen = 0;
-        nochZuZahlen = 500;
-        Geld = 500;
+        return hRueckgeld;
     }
-    public void setPrice(int pPrice) {
-        price = pPrice;
-        nochZuZahlen = 500;
-        bisherGezahlt = 0;
-    }
+
+    /**
+     * Gibt eine Meldung aus
+     */
     public void meldung() {
-        System.out.println("Bitte werfen sie den passenden\n\t Geldbetrag ein!");
-    }    
+        System.out.println("Bitte werfen Sie dn passenden Geldbetrag ein!");
+        // \n -> Neue Zeile; \t -> Lücke
+    }
+
+    /**
+     * Gibt den Preis au
+     */
+    public void preisAusgeben(){
+        System.out.println("Der Preis eines Tickets beträgt xyz Cent"); // + preis + "Cent"
+    }
+
+    public int muenze(int pWert) {
+        if (bisherGezahlt % pWert >= 1) {
+            int hAnzahl = (bisherGezahlt - (bisherGezahlt % pWert)) / pWert;
+            bisherGezahlt = bisherGezahlt - (hAnzahl * pWert);
+            return hAnzahl;
+        } else {
+            return 0;
+        }
+    }
+
+    public void muenzen2() {
+        System.out.println(muenze(200) + " x 2 € ");
+        System.out.println(muenze(100) + " x 1 € ");
+        System.out.println(muenze(50) + " x 0.50 € ");
+        System.out.println(muenze(20) + " x 0.20 € ");
+        System.out.println(muenze(10) + " x 0.10 € ");
+        System.out.println(muenze(5) + " x 0.05 € ");
+        System.out.println(muenze(2) + " x 0.02 € ");
+        System.out.println(muenze(1) + " x 0.01 € ");
+    }
+    
+
+
+
+
+
+
+
+
+
+    /**
+     * Druckt ein Ticket.
+     */
+    public void ticketDrucken()
+    {
+        if (bisherGezahlt >= preis) {  // Man darf nur ein Ticket bekommen, wenn man auch genug Geid eingezahlt hat.
+            int rueckgeld = bisherGezahlt - preis;  // Rueckgeld wird berechnet
+            // Den Ausdruck eines Tickets simulieren.
+            bisherGezahlt = 0;  // bisherGezahlt wird genullt, weil nun der Druck des Tickets erfolgt und der nächste Kauf abgeschlossen werden kann
+            System.out.println("##################");
+            System.out.println("# Ticket");
+            System.out.println("# " + preis + " Cent.");
+            System.out.println("# " + rueckgeld + " Cent.");
+            System.out.println("##################");
+            System.out.println();
+        } else {
+            int fehlenderBetrag = preis - bisherGezahlt;  // fehlender Betrag wird berechnet
+            System.out.println("Dir fehlen " + fehlenderBetrag + " Cent.");  // Konsolenausgabe, die Auskunft über fehlenden Betrag gibt
+        }
+    } 
 }

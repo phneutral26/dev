@@ -82,23 +82,17 @@ public class Ticketautomat
         System.out.println("Der Preis eines Tickets beträgt" + preis + "Cent"); // + preis + "Cent"
     }
 
-    /* public int muenzetest(int pWert) {
+    public int muenze(int pWert) {
         if (bisherGezahlt % pWert >= 0) {
             int hAnzahl = (bisherGezahlt - (bisherGezahlt % pWert)) / pWert;
             bisherGezahlt = bisherGezahlt - (hAnzahl * pWert);
             return hAnzahl;
         } else {
             return 0;
-        }  
-    } */
-    public int muenze(int pWert){
-        int hAnzahl = (bisherGezahlt -(bisherGezahlt%pWert)) / pWert;
-        bisherGezahlt = bisherGezahlt - (hAnzahl*pWert);
-        return hAnzahl;
+        }
     }
 
     public void muenzen2() {
-        System.out.println(bisherGezahlt);
         System.out.println(muenze(200) + " x 2 € ");
         System.out.println(muenze(100) + " x 1 € ");
         System.out.println(muenze(50) + " x 0.50 € ");
@@ -108,6 +102,16 @@ public class Ticketautomat
         System.out.println(muenze(2) + " x 0.02 € ");
         System.out.println(muenze(1) + " x 0.01 € ");
     }
+    
+
+
+
+
+
+
+
+
+
     /**
      * Druckt ein Ticket.
      */
@@ -116,13 +120,14 @@ public class Ticketautomat
         if (bisherGezahlt >= preis) {  // Man darf nur ein Ticket bekommen, wenn man auch genug Geid eingezahlt hat.
             int rueckgeld = bisherGezahlt - preis;  // Rueckgeld wird berechnet
             // Den Ausdruck eines Tickets simulieren.
-           // bisherGezahlt = 0;  // bisherGezahlt wird genullt, weil nun der Druck des Tickets erfolgt und der nächste Kauf abgeschlossen werden kann
+            bisherGezahlt = 0;  // bisherGezahlt wird genullt, weil nun der Druck des Tickets erfolgt und der nächste Kauf abgeschlossen werden kann
             System.out.println("##################");
             System.out.println("# Ticket");
             System.out.println("# " + preis + " Cent.");
             System.out.println("# " + rueckgeld + " Cent.");
             System.out.println("##################");
             System.out.println();
+            bisherGezahlt = bisherGezahlt - preis; //Ist für die Funktion muenzen2 nötig
             muenzen2();
         } else {
             int fehlenderBetrag = preis - bisherGezahlt;  // fehlender Betrag wird berechnet

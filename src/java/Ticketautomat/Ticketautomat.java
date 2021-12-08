@@ -8,20 +8,20 @@
 public class Ticketautomat
 {
     private int price; // how much is the ticket?
-    private int payedByNow; // how much have i payed by now?
-    private int still_left; // how much do i still need to pay?
-    private int money; // how much money do i still have
-    private int changeMoney; // how much exchange money do i get?
-    private int allEarnings; // how much money has been put into the machine?
+    private int bisherGezahlt; // how much have i payed by now?
+    private int nochZuZahlen; // how much do i still need to pay?
+    private int Geld; // how much Geld do i still have
+    private int rückGeld; // how much exchange Geld do i get?
+    private int alleEinahmen; // how much Geld has been put into the machine?
 
     /**
      * Konstruktor vom Ticketautomaten 
     */
-    public Ticketautomat(int pstart_money)
+    public Ticketautomat(int pstart_Geld)
     {
         price = 500;
-        money = pstart_money;
-        still_left = 500;
+        Geld = pstart_Geld;
+        nochZuZahlen = 500;
     }
     /**
      * Liefert den price eines Tickets dieses Automatens (in cent)
@@ -32,35 +32,35 @@ public class Ticketautomat
         
     }
     /** Liefert den bisher eingezahlten Betrag */
-    public int givePayedByNow()
+    public int givebisherGezahlt()
     {
-        return payedByNow;
+        return bisherGezahlt;
     }
     /** es wird geld in den automaten geworfen" */
-    public void pay(int pAmount)
+    public void pay(int pBetrag)
     {
          
-        if (pAmount<=money){ // Stops you from paying more than you have    
-            money -= pAmount; // adjust your balance to be reduced by payed money
-            allEarnings += pAmount; // update the variable to count every earning
-            payedByNow += pAmount; // update the variable to count how many you have paid
-            still_left -= pAmount; // reduce the variable, how much you still have to pay by payed money
-            if(payedByNow > price){ // Exchange Money
-                changeMoney = pAmount - price;
-                money += changeMoney;
-                System.out.println(changeMoney + " Back");
+        if (pBetrag<=Geld){ // Stops you from paying more than you have    
+            Geld -= pBetrag; // adjust your balance to be reduced by payed Geld
+            alleEinahmen += pBetrag; // update the variable to count every earning
+            bisherGezahlt += pBetrag; // update the variable to count how many you have paid
+            nochZuZahlen -= pBetrag; // reduce the variable, how much you still have to pay by payed Geld
+            if(bisherGezahlt > price){ // Exchange Geld
+                rückGeld = pBetrag - price;
+                Geld += rückGeld;
+                System.out.println(rückGeld + " Back");
                 }
              else{
-            System.out.println("You dont have enough money to do this. Sorry.");
+            System.out.println("You dont have enough Geld to do this. Sorry.");
         }
             }
         }
        
 public int muenze(int pWert){
-    if (payedByNow % pWert >= 1){
-        int hAmount = (payedByNow - (payedByNow % pWert)) / pWert;
-        payedByNow = payedByNow - (hAmount * pWert);
-        return hAmount;
+    if (bisherGezahlt % pWert >= 1){
+        int hAnzahl = (bisherGezahlt - (bisherGezahlt % pWert)) / pWert;
+        bisherGezahlt = bisherGezahlt - (hAnzahl * pWert);
+        return hAnzahl;
     }
     else{
         return 0;
@@ -80,40 +80,40 @@ public void muenze2(){
     /** Druckt ein Drucktext */
     public void printTicket()
     {    
-        if(payedByNow>=500){ // you need to pay exactly 500 cents
+        if(bisherGezahlt>=500){ // you need to pay exactly 500 cents
             System.out.println("##################");
             System.out.println("#Ticket#");
             System.out.println(price);
             System.out.println("##################");
-            payedByNow = 0;
-            still_left = 500;
+            bisherGezahlt = 0;
+            nochZuZahlen = 500;
         }
         else{
             System.out.println("You didnt pay enough! You still have to pay: ");
-            System.out.println(still_left); // look line 45
+            System.out.println(nochZuZahlen); // look line 45
         }
         }
     public void stillLeft(){
-        still_left = price - payedByNow; // UNNEEDED
-        System.out.println("The price of the ticket still is: " + still_left);
+        nochZuZahlen = price - bisherGezahlt; // UNNEEDED
+        System.out.println("The price of the ticket still is: " + nochZuZahlen);
     }
-    public void addMoney(int pAdd)
+    public void addGeld(int pAdd)
     {
-        money += pAdd; //self-explanatory, create money from nothing an stuff it in your own pockets
+        Geld += pAdd; //self-explanatory, create Geld from nothing an stuff it in your own pockets
     }
-    public int returnAllEarnings(){
-        return allEarnings;
+    public int returnalleEinahmen(){
+        return alleEinahmen;
     }
     public void clear() {
-        payedByNow = 0;
-        allEarnings = 0;
-        still_left = 500;
-        money = 500;
+        bisherGezahlt = 0;
+        alleEinahmen = 0;
+        nochZuZahlen = 500;
+        Geld = 500;
     }
     public void setPrice(int pPrice) {
         price = pPrice;
-        still_left = 500;
-        payedByNow = 0;
+        nochZuZahlen = 500;
+        bisherGezahlt = 0;
     }
     public void meldung() {
         System.out.println("Bitte werfen sie den passenden\n\t Geldbetrag ein!");

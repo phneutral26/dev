@@ -1,0 +1,69 @@
+InitConnectionLimits: MaxClients = 2048
+
+Xvnc TigerVNC 1.10.0 - built Oct 25 2021 14:10:56
+Copyright (C) 1999-2019 TigerVNC Team and many others (see README.rst)
+See https://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 12000000, The X.Org Foundation
+
+
+Sat Dec 18 11:09:35 2021
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on all interface(s), port 5901
+ vncext:      created VNC server for screen 0
+Sync Extension 3.1
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/misc/, removing from list!
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/TTF/, removing from list!
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/OTF/, removing from list!
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/Type1/, removing from list!
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/100dpi/, removing from list!
+[dix] Could not init font path element /data/data/com.termux/files/usr/share/fonts/75dpi/, removing from list!
+Popen: `"/data/data/com.termux/files/usr/bin/xkbcomp" -w 1 "-R/data/data/com.termux/files/usr/share/X11/xkb" -xkm "-" -em1 "The XKEYBOARD keymap compiler (xkbcomp) reports:" -emp "> " -eml "Errors from xkbcomp are not fatal to the X server" "/data/data/com.termux/files/usr/tmp/server-1.xkm"', fp = 0xb400007bc5814018
+Pclose: fp = 0xb400007bc5814018
+Loaded XKB keymap /data/data/com.termux/files/usr/tmp/server-1.xkm, defined=0x7f
+client(0): Reserved pid(25311).
+client(0): Reserved cmdname(/data/data/com.termux/files/usr/bin/Xvnc) and cmdargs(:1 -geometry 1366x768 -auth /data/data/com.termux/files/home/.Xauthority -desktop localhost:1 () -pn -rfbauth /data/data/com.termux/files/home/.vnc/passwd -rfbport 5901 -rfbwait 30000).
+client(200000): Reserved pid(25318).
+client(200000): Reserved cmdname(/data/data/com.termux/files/usr/bin/openbox) and cmdargs(--startup /data/data/com.termux/files/usr/libexec/openbox-autostart OPENBOX).
+AllocNewConnection: client index = 1, socket fd = 8
+Obt-Message: Failed to open an Input Method
+Openbox-Message: X server does not support locale.
+Openbox-Message: Cannot set locale modifiers for the X server.
+client(400000): Reserved pid(25332).
+client(400000): Reserved cmdname(feh) and cmdargs(--no-fehbg --bg-scale /data/data/com.termux/files/home/.local/share/backgrounds/Default.png).
+AllocNewConnection: client index = 2, socket fd = 9
+Not using O_TMPFILE
+client(600000): Reserved pid(25332).
+client(600000): Reserved cmdname(feh) and cmdargs(--no-fehbg --bg-scale /data/data/com.termux/files/home/.local/share/backgrounds/Default.png).
+AllocNewConnection: client index = 3, socket fd = 10
+client(400000): Released pid(25332).
+client(400000): Released cmdline(feh) and cmdargs(--no-fehbg --bg-scale /data/data/com.termux/files/home/.local/share/backgrounds/Default.png).
+client(400000): Reserved pid(25338).
+client(400000): Reserved cmdname(xcompmgr) and cmdargs(-c -r 8 -o 0.40 -l -12 -t -12).
+AllocNewConnection: client index = 2, socket fd = 9
+client(800000): Reserved pid(25334).
+client(800000): Reserved cmdname(xfsettingsd) and cmdargs(NULL).
+AllocNewConnection: client index = 4, socket fd = 10
+xfsettingsd: Cannot spawn a message bus without a machine-id: Unable to load /data/data/com.termux/files/usr/var/data/data/com.termux/files/usr/lib/dbus/machine-id or /data/data/com.termux/files/usr/etc/machine-id: Failed to open file “/data/data/com.termux/files/usr/var/data/data/com.termux/files/usr/lib/dbus/machine-id”: No such file or directory.
+
+(xfsettingsd:25334): xfsettingsd-ERROR **: 11:09:40.257: Failed to connect to the dbus session bus.
+client(800000): Released pid(25334).
+client(800000): Released cmdline(xfsettingsd) and cmdargs(NULL).
+thunar: Failed to initialize Xfconf: Cannot spawn a message bus without a machine-id: Unable to load /data/data/com.termux/files/usr/var/data/data/com.termux/files/usr/lib/dbus/machine-id or /data/data/com.termux/files/usr/etc/machine-id: Failed to open file “/data/data/com.termux/files/usr/var/data/data/com.termux/files/usr/lib/dbus/machine-id”: No such file or directory
+
+client(800000): Reserved pid(25376).
+client(800000): Reserved cmdname(thunar) and cmdargs(--daemon).
+AllocNewConnection: client index = 4, socket fd = 10
+client(a00000): Reserved pid(25374).
+client(a00000): Reserved cmdname(polybar) and cmdargs(main -c /data/data/com.termux/files/home/.config/polybar/default/config.ini).
+AllocNewConnection: client index = 5, socket fd = 11
+polybar|notice:  Parsing config file: /data/data/com.termux/files/home/.config/polybar/default/config.ini
+client(a00000): Released pid(25374).
+client(a00000): Released cmdline(polybar) and cmdargs(main -c /data/data/com.termux/files/home/.config/polybar/default/config.ini).
+
+(thunar:25376): thunar-WARNING **: 11:09:42.433: Name 'org.xfce.FileManager' lost on the message dbus.
+
+(thunar:25376): thunar-WARNING **: 11:09:42.433: Name 'org.freedesktop.FileManager1' lost on the message dbus.
+ERROR: openbox-xdg-autostart requires PyXDG to be installed
+
+
+Dec 18 11:09 : exception: MPD died from signal 11

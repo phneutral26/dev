@@ -71,7 +71,7 @@ public class Ticketautomat
      * Gibt eine Meldung aus
      */
     public void meldung() {
-        System.out.println("Bitte werfen Sie dn passenden Geldbetrag ein!");
+        System.out.println("Bitte werfen Sie den \t passenden Geldbetrag ein!");
         // \n -> Neue Zeile; \t -> Lücke
     }
 
@@ -129,4 +129,8 @@ public class Ticketautomat
             System.out.println("Dir fehlen " + fehlenderBetrag + " Cent.");  // Konsolenausgabe, die Auskunft über fehlenden Betrag gibt
         }
     } 
+    public void main(){
+        geldEinwerfen(200);
+        ticketDrucken();
+    }
 }

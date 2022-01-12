@@ -13,6 +13,7 @@ public class buch
     private String autor;
     private boolean verliehen;
     private String signatur;
+    private String leiher;
 
     public buch(String titel, String autor, int seitenanzahl)
     {
@@ -20,11 +21,11 @@ public class buch
         this.autor = autor;
         this.seitenanzahl = seitenanzahl;
         this.verliehen = false;
-        this.signatur = "";
+        this.signatur = "unbekannt";
     }
     /**  
      * Liefert das Attribut des Buches zurück.
-     * */ 
+     * */
     public String gibTitel() {
         return titel;
     }
@@ -50,15 +51,17 @@ public class buch
         if (signatur.length() == 10){
             this.signatur = signatur;
         }
-        else { System.out.println("Bitte neue Signatur eingeben."); }
+        else { System.out.println("Inkorrekte Eingabe. Bitte neue Signatur eingeben."); }
     }
 
     public boolean istVerliehen() {
         return verliehen;
     }
-    public void leiheAus(){
+
+    public void leiheAus(String leiher){
         if (!verliehen) {
             verliehen = true;
+            this.leiher = leiher;
             anzahlAusleihen++;
         }
         else {
@@ -80,6 +83,7 @@ public class buch
         if(!istVerliehen()){
             System.out.println("Das Buch ist verfügbar");
         }
-        else { System.out.println("Das Buch ist nicht verfügbar");}
+        else { System.out.println("Das Buch ist nicht verfügbar"); System.out.println("Das Buch wird gerade von " + this.leiher + " ausgeliehen"); }
+
     }
 }

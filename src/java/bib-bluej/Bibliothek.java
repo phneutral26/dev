@@ -20,15 +20,39 @@ public class Bibliothek
         buch2 = new buch("Gregs Tagebuch", "Jeff Kinney", 224);
         buch3 = new buch("Harry Potter", "JK Rowling", 345);
         buch4 = new buch("Herr der Ringe", "Tolkien", 1000);
+        buch5 = new buch("Informatik für Anfänger", "Informatiker", 50);
 
     }
 
     /**
      * Gibt die Details zu jedem Buch aus
      */
-    public void gibDetailsAllerBuecher()
+    public void gibDetailsAllerBuecher(int book)
     {
-        buch1.gibDetails();
+        switch (book) {
+            case 0:
+                buch1.gibDetails();
+                buch2.gibDetails();
+                buch3.gibDetails();
+                buch4.gibDetails();
+                buch5.gibDetails();
+                break;
+            case 1:
+                buch1.gibDetails();
+                break;
+            case 2:
+                buch2.gibDetails();
+                break;
+            case 3:
+                buch3.gibDetails();
+                break;
+            case 4:
+                buch4.gibDetails();
+                break;
+            case 5:
+                buch5.gibDetails();
+                break;
+        }
     }
     
 }

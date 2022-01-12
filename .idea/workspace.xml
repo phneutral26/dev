@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65d84f91-a456-45f1-8881-7cf1438c65a1" name="Changes" comment="">
+    <list default="true" id="65d84f91-a456-45f1-8881-7cf1438c65a1" name="Changes" comment="new class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/bib-bluej/buch.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/bib-bluej/buch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/bib-bluej/buch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/bib-bluej/buch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/bib-bluej/Bibliothek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/bib-bluej/Bibliothek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/bib-bluej/buch.ctxt" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/bib-bluej/buch.ctxt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,14 @@
       <option name="presentableId" value="Default" />
       <updated>1641894300742</updated>
     </task>
+    <task id="LOCAL-00001" summary="new class">
+      <created>1641981872762</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641981872762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,5 +77,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new class" />
+    <option name="LAST_COMMIT_MESSAGE" value="new class" />
   </component>
 </project>

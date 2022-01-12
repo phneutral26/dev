@@ -34,13 +34,7 @@ public class buch
     public int gibSeitenzahl(){
         return seitenanzahl;
     }
-    public void returnAll(String pAuswahl){
-  	switch (pAuswahl){
-		case 'titel':
-			System.out.println("titel")
-			break;
-	}
-    }
+    
 
     public String getSignatur() { return signatur; }
 
